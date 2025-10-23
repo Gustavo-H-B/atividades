@@ -1,4 +1,4 @@
-package classe;
+package classe.n1_1;
 public class Sapo {
     public static void main(String[] args) {
         SaposClasse rex = new SaposClasse();

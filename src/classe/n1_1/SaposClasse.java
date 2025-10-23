@@ -1,4 +1,4 @@
-package classe;
+package classe.n1_1;
 
 public class SaposClasse {
     //classe Sapo
@@ -15,7 +15,7 @@ public class SaposClasse {
             System.out.println("O sapo está cansado...com fome...e com sono...");
             this.sono = true;
             this.fome = true;
-        } else if (this.energia <= 50) {
+        } else if (this.energia <= 50 & this.energia > 25) {
             System.out.println("O sapo está começando a sentir fome...");
             this.energia = this.energia - 1;
         } else if (this.energia <= 25) {

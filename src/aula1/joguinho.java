@@ -1,5 +1,6 @@
+package aula1;
 import java.util.Scanner;
-public class Main {
+public class joguinho {
     public static void main(String[] args) {
 
         Scanner leia = new Scanner(System.in);
