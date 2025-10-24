@@ -1,26 +1,57 @@
 package classe.n1_1;
+import java.util.Scanner;
 
 public class SaposClasse {
+    Scanner leia = new Scanner(System.in);
+    String mudar;
+    int valor;
+    String talvez;
+
     //classe Sapo
     //atributos
-    double tamanho;
-    String cor;
-    boolean sono;
-    boolean fome;
-    int energia;
+    public double tamanho;
+    public String cor;
+    private boolean sono;
+    private boolean fome;
+    private int energia;
 
     //metodos
-    void statusEnergia() {
-        if (this.energia <= 0) {
-            System.out.println("O sapo está cansado...com fome...e com sono...");
-            this.sono = true;
-            this.fome = true;
-        } else if (this.energia <= 50 & this.energia > 25) {
-            System.out.println("O sapo está começando a sentir fome...");
-            this.energia = this.energia - 1;
-        } else if (this.energia <= 25) {
-            System.out.println("O sapo está começando a sentir-se cansado...");
+    void publico () {
+        System.out.println("Deseja mudar o que?\nSono\nFome\nEnergia");
+        mudar = leia.next();
+        if (this.mudar.equalsIgnoreCase("Energia")){
+            System.out.println("Qual vai ser a energia?");
+            valor = leia.nextInt();
+            energia = valor;
+        }
+        if (this.mudar.equalsIgnoreCase("Sono")) {
+            System.out.println("O sapo está com sono?\n(true / false)");
+            talvez = leia.next();
+            if (this.talvez.equalsIgnoreCase("True")) {
+                this.sono = true;
+            } else if (this.talvez.equalsIgnoreCase("False")) {
+                this.sono = false;
+            }
+        }
+        if (this.mudar.equalsIgnoreCase("Fome")){
+            System.out.println("O sapo está com fome?\n(true / false)");
+            talvez = leia.next();
+            if (this.talvez.equalsIgnoreCase("True")){
+                this.fome = true;
+            } else if (this.talvez.equalsIgnoreCase("False")){
+                this.fome = false;
+            }
+        }
+    }
+
+    void situacao () {
+        if (this.fome == true){
             this.energia = this.energia - 2;
+            System.out.println("O sapo está com fome...");
+        }
+        if (this.sono == true){
+            this.energia = this.energia - 5;
+            System.out.println("O sapo está com sono...");
         }
     }
 
@@ -56,7 +87,7 @@ public class SaposClasse {
 
     void comer () {
         System.out.println("O sapo está comendo moscas... e mais moscas...");
-        this.energia = this.energia + 5;
+        this.energia = this.energia + 15;
         System.out.println("A energia do sapo está em: " + this.energia);
     }
 

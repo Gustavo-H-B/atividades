@@ -4,17 +4,24 @@ public class Sapo {
         SaposClasse rex = new SaposClasse();
 
         rex.cor = "Verde";
-        rex.sono = false;
-        rex.fome = false;
-        rex.energia = 100;
+
+        rex.publico();
+        rex.publico();
+        rex.publico();
+
         rex.tamanho = 6;
 
         rex.status();
+        rex.situacao();
 
         rex.andar();
+        rex.situacao();
         rex.nadar();
+        rex.situacao();
         rex.salto();
+        rex.situacao();
         rex.comer();
+        rex.situacao();
 
         rex.status();
 
