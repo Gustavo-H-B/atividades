@@ -3,8 +3,8 @@ package classe.n1_4;
 import java.security.PublicKey;
 
 public interface IBancoFinanceiro {
-    public abstract void Sacar();
-    public abstract void Depositar();
+    public abstract double Sacar(double Valor);
+    public abstract double Depositar(double Valor);
     public abstract void VerSaldo();
-    public abstract void Transferir();
+    public abstract double Transferir(double Valor);
 }

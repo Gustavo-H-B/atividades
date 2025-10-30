@@ -2,21 +2,12 @@ package classe.n1_4;
 
 public class Main {
     public static void main(String[] args) {
-        CBancoFinanceiro gustavo = new CBancoFinanceiro(0) {
-            public void Sacar() {
-            }
-            public void Depositar() {
-            }
-            public void Transferir() {
-            }
-            public void VerSaldo() {
-            }
-        };
-        gustavo.Depositar();
+        CBancoFinanceiro gustavo = new CBancoFinanceiro(0);
+        gustavo.Depositar(100);
         gustavo.VerSaldo();
-        gustavo.Sacar();
+        gustavo.Sacar(10);
         gustavo.VerSaldo();
-        gustavo.Transferir();
+        gustavo.Transferir(20);
         gustavo.VerSaldo();
     }
 }
