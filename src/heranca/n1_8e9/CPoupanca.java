@@ -14,4 +14,6 @@ public class CPoupanca extends CContaComum{
     public void setDataAniversario(String dataAniversario) {
         this.dataAniversario = dataAniversario;
     }
+@Override
+    public void sacar(){};
 }

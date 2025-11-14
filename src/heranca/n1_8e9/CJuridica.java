@@ -20,7 +20,7 @@ public class CJuridica extends CPessoa{
     }
 
     public void gravar(double randaEmpresa) {
-        System.out.println("Você depositou a renda de sua empresa.");
+        System.out.println("Você depositou " + randaEmpresa +"R$ a renda de sua empresa.");
     }
 
     public void gravar(String endereco, String telefone) {
