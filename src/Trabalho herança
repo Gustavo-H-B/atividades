@@ -1,0 +1,210 @@
+public class Main {
+    public static void main(String[] args) {
+        CSapoFaminto sapo1 = new CSapoFaminto("REX", "Verde Musgo", 5, 6, 0);
+        CSapoCururu sapo2 = new CSapoCururu("Atumalaka", "Roxo Brilhante", 10, 2, true);
+        CSapoCururu sapo3 = new CSapoCururu("Sad FrogBoy", "Azul Cinzento", 1, 10, false);
+        CSapoPeSujo sapo4 = new CSapoPeSujo("Cascão","Marrom Bombom", 2.5, 4, true, 0);
+        CSapoQualquer sapo5 = new CSapoQualquer("Sapo Comum","Verde Natural", 1, 5);
+
+        sapo1.mostrar();
+        sapo1.andar();
+        sapo1.mostrar();
+        sapo1.comer();
+        sapo1.mostrar();
+        sapo1.pular();
+        sapo1.mostrar();
+        sapo1.comer();
+        sapo1.mostrar();
+
+        sapo2.andar();
+        sapo2.comer();
+        sapo2.pular();
+
+        sapo3.andar();
+        sapo3.comer();
+        sapo3.pular();
+
+        sapo4.andar();
+        sapo4.comer();
+        sapo4.pular();
+        sapo4.mostrar();
+
+        sapo5.andar();
+        sapo5.comer();
+        sapo5.pular();
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+public abstract class CSapo {
+    protected String apelido;
+    protected String cor;
+    protected double puloAltura;
+    protected int idadeDeSapo;
+
+    public CSapo(String apelido, String cor, double puloAltura, int idadeDeSapo) {
+        this.apelido = apelido;
+        this.cor = cor;
+        this.puloAltura = puloAltura;
+        this.idadeDeSapo = idadeDeSapo;
+    }
+
+    public String getApelido() {
+        return apelido;
+    }
+    public void setApelido(String apelido) {
+        this.apelido = apelido;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public double getPuloAltura() {
+        return puloAltura;
+    }
+    public void setPuloAltura(double puloAltura) {
+        this.puloAltura = puloAltura;
+    }
+
+    public int getIdadeDeSapo() {
+        return idadeDeSapo;
+    }
+    public void setIdadeDeSapo(int idadeDeSapo) {
+        this.idadeDeSapo = idadeDeSapo;
+    }
+
+    public abstract void pular();
+
+    public abstract void comer();
+
+    public abstract void andar();
+}
+--------------------------------------------------------------------
+public class CSapoFaminto extends CSapo{
+    private int moscasGuardadas;
+
+    public CSapoFaminto(String apelido, String cor, double puloAltura, int idadeDeSapo, int moscasGuardadas) {
+        super(apelido, cor, puloAltura, idadeDeSapo);
+        this.moscasGuardadas = moscasGuardadas;
+    }
+
+    public int getMoscasGuardadas() {
+        return moscasGuardadas;
+    }
+    public void setMoscasGuardadas(int moscasGuardadas) {
+        this.moscasGuardadas = moscasGuardadas;
+    }
+
+    public void mostrar() {
+        System.out.println("Moscas na pochete: " + getMoscasGuardadas());
+    }
+
+    @Override
+    public void pular () {
+        System.out.println(getApelido() + " pulou na direção de uma mosca... + 1 mosca.");
+        setMoscasGuardadas(getMoscasGuardadas() + 1);
+    }
+
+    public void comer () {
+        System.out.println(getApelido() + " comeu todas as moscas que tinha...");
+        setMoscasGuardadas(getMoscasGuardadas() * 0);
+    }
+
+    public void andar () {
+        System.out.println(getApelido() + " está procurando mais moscas... + 5 moscas.");
+        setMoscasGuardadas(getMoscasGuardadas() + 5);
+    }
+}
+----------------------------------------------------------------------------------------------
+public class CSapoCururu extends CSapo {
+    private boolean feliz;
+
+    public CSapoCururu(String apelido, String cor, double puloAltura, int idadeDeSapo, boolean feliz) {
+        super(apelido, cor, puloAltura, idadeDeSapo);
+        this.feliz = feliz;
+    }
+
+    public boolean isFeliz() {
+        return feliz;
+    }
+    public void setFeliz(boolean feliz) {
+        this.feliz = feliz;
+    }
+
+    @Override
+    public void pular () {
+        if (feliz) {
+            System.out.println(getApelido() + " ficou pulando e pulando....pulando....e....pulando...🤣");
+        } else {
+            System.out.println(getApelido() + " pulou uma vez e ainda tropeçou...😔");
+        }
+    }
+
+    public void comer () {
+        if (feliz) {
+            System.out.println(getApelido() + " comeu uma família inteira de moscas...😋");
+        } else {
+            System.out.println(getApelido() + " comeu um mosquito...e cuspiu fora...🤮");
+        }
+    }
+
+    public void andar () {
+        if (feliz) {
+            System.out.println(getApelido() + " caminhou todo pomposo...😁");
+        } else {
+            System.out.println(getApelido() + " andou 10 passos e parou...😰");
+        }
+    }
+}
+------------------------------------------------------------------------------------------------
+public class CSapoQualquer extends CSapo{
+    public CSapoQualquer(String apelido, String cor, double puloAltura, int idadeDeSapo) {
+        super(apelido, cor, puloAltura, idadeDeSapo);
+    }
+
+    @Override
+    public void pular () {}
+
+    public void comer () {}
+
+    public void andar () {}
+}
+--------------------------------------------------------------------------------------------
+public class CSapoPeSujo extends CSapoCururu{
+    private int pocasPuladas;
+
+    public CSapoPeSujo(String apelido, String cor, double puloAltura, int idadeDeSapo, boolean feliz, int pocasPuladas) {
+        super(apelido, cor, puloAltura, idadeDeSapo, feliz);
+        this.pocasPuladas = pocasPuladas;
+    }
+
+    public int getPocasPuladas() {
+        return pocasPuladas;
+    }
+    public void setPocasPuladas(int pocasPuladas) {
+        this.pocasPuladas = pocasPuladas;
+    }
+
+    public void mostrar () {
+        System.out.println("Poças puladas até agora: " + getPocasPuladas());
+    }
+
+    @Override
+    public void pular () {
+        System.out.println(getApelido() + " pulou em várias poças de lama...3 poças.");
+        setPocasPuladas(getPocasPuladas() + 3);
+    }
+
+    public void comer () {
+        System.out.println(getApelido() + " comeu uma mosca com molho de lama de pântano...1 poça...");
+        setPocasPuladas(getPocasPuladas() + 1);
+    }
+
+    public void andar () {
+        System.out.println(getApelido() + " andou por cima de 2 poças grandes...");
+        setPocasPuladas(getPocasPuladas() + 2);
+    }
+}
