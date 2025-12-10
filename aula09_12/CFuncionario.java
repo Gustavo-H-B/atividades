@@ -1,7 +1,7 @@
 package aula09_12;
 
 import java.util.Scanner;
-
+    //herança
 public class CFuncionario extends CUsuario{
     //atributos
     private int livrosCadastrados;
@@ -54,4 +54,5 @@ public class CFuncionario extends CUsuario{
     public void lerLivro(){
         System.out.println("´Então " + getNome() + " pegou um livro no seu intervalo e começou a ler:...´\n    Em um passado não tão distânte...");
     }
+
 }
