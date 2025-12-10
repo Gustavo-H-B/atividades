@@ -1,7 +1,7 @@
 package aula09_12;
 
 import java.util.Scanner;
-
+    //herança
 public class CLeitor extends CUsuario{
     //atributos
     private int livrosLidos;
@@ -44,4 +44,5 @@ public class CLeitor extends CUsuario{
         this.livroEmprestado = livroRetirado;
         System.out.println(getNome() + " adquiriu o livro ´" + livroEmprestado.getTitulo() + "´.");
     }
+
 }
