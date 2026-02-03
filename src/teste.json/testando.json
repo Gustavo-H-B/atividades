@@ -1,0 +1,24 @@
+{
+    "apelido": "sapo",
+    "diasVivos": 69,
+    "tamanho": 0.25,
+    "ouveMusica": true,
+    "namorada": null,
+    "locais": [
+        {
+            "localizacao": "casa"
+        },
+        {
+            "localizacao": "trabalho"
+        },
+        {
+            "localizacao": "bunker"
+        }
+    ],
+    "acoes": ["jogar", "ver animes", "ouvir musica", "comer miojo"],
+    "animal": {
+        "especie": "mosca",
+        "tipo": "voador",
+        "tamanho": 0.01
+        }
+}
